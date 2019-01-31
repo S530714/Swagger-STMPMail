@@ -2,6 +2,8 @@ package com.example.demo;
 
 
 import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +35,9 @@ public class SMTPEmail {
 		email.send(message);
 		
 		return "Email sent Successfully";
-		
 	}
+
+
 }
 
 

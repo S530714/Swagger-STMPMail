@@ -13,7 +13,7 @@ public class UserDAO implements IUserDAO {
 	public UserModel getUserById(int Id) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session  session = sessionFactory.openSession();
-		UserModel user = session.get(UserModel.class, Id);
+		UserModel user = (UserModel) session.get(UserModel.class, Id);
 		session.close();
 		return user;
 	}
